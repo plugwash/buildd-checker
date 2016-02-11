@@ -1,4 +1,5 @@
 # buildd-check: package processor for buildd
+# This file goes in /usr/share/perl5/Buildd/
 # Copyright © 1998 Roman Hodek <Roman.Hodek@informatik.uni-erlangen.de>
 # Copyright © 2009 Roger Leigh <rleigh@debian.org>
 # Copyright © 2005 Ryan Murray <rmurray@debian.org>
@@ -70,6 +71,16 @@ sub run {
     }
 
     chdir($self->get_conf('HOME'));
+
+    open my $fh, '<', "checkerwhitelist" or die "failed to open whitelist file";
+    my %whitelist; 
+    while (my $line = readline $fh) {
+        chomp($line);
+        next if $line =~ /^\s*\z/; # skip blank lines;
+        next if $line =~ /^\s*#/; # skip comment lines;
+        $whitelist{$line} = 1;
+    }
+    $self->set('whitelist',\%whitelist);
 
     $self->process_build('build');
 

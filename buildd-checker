@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 #
 # buildd-checker: packages processor for buildd
+# this file goes in /usr/bin
 # Copyright © 2012 Mike Thompson <mpthompson@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify

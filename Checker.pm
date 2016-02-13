@@ -72,6 +72,7 @@ sub run {
 
     chdir($self->get_conf('HOME'));
 
+    #print STDERR "about to read whitelist\n";
     open my $fh, '<', "checkerwhitelist" or die "failed to open whitelist file";
     my %whitelist; 
     while (my $line = readline $fh) {
@@ -81,7 +82,7 @@ sub run {
         $whitelist{$line} = 1;
     }
     $self->set('whitelist',\%whitelist);
-
+    #print STDERR "whitelist read complete\n";
     $self->process_build('build');
 
     return 0;
@@ -302,7 +303,8 @@ sub test_package ($$) {
 	# Look for lines that are executable binaries.
         if ($info[$c] =~ /ELF|ar archive/) {
              # Now test the file. 
-             if (!$self->test_file($files[$c])) {
+             my $fileinpackage = substr($files[$c],length($self->get_conf('HOME') . "/build/$tmpdir/data"));
+             if (!$self->test_file($files[$c],$fileinpackage)) {
                  $v7clean = 0;
              }
         }
@@ -321,6 +323,7 @@ sub test_package ($$) {
 sub test_file ($$) {
     my $self = shift;
     my $file = shift;
+    my $fileinpackage = shift;
 
     my $filescan;
     # Call readelf on the file to be tested.
@@ -333,6 +336,7 @@ sub test_file ($$) {
  
     # Look for the "Tag_CPU_arch: v7" string.
     if ($filescan =~ /Tag_CPU_arch:\s+v7/) {
+        $self->log("found dirty file ".$fileinpackage);
         return 0;
     }
 

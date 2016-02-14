@@ -333,11 +333,15 @@ sub test_file ($$) {
     }
     { local($/); undef $/; $filescan = <F>; }
     close(F);
- 
+    my $whitelist = $self->get('whitelist');
     # Look for the "Tag_CPU_arch: v7" string.
     if ($filescan =~ /Tag_CPU_arch:\s+v7/) {
-        $self->log("found dirty file ".$fileinpackage);
-        return 0;
+        if ($whitelist->{$fileinpackage}) {
+            $self->log("found dirty file ".$fileinpackage." but ignoring due to whitelist");
+        } else {
+            $self->log("found dirty file ".$fileinpackage);
+            return 0;
+        }
     }
 
     return 1;

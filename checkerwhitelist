@@ -1,4 +1,6 @@
+#this file goes in /build/buildd/checkerwhitelist
 #iceweasel
 /usr/lib/debug/usr/lib/iceweasel/libxul.so
 /usr/lib/iceweasel/libxul.so
-
+/usr/lib/debug/usr/lib/icedove/libxul.so
+/usr/lib/icedove/libxul.so

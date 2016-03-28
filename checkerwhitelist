@@ -4,3 +4,5 @@
 /usr/lib/iceweasel/libxul.so
 /usr/lib/debug/usr/lib/icedove/libxul.so
 /usr/lib/icedove/libxul.so
+/usr/lib/debug/usr/lib/firefox-esr/libxul.so
+/usr/lib/firefox-esr/libxul.so

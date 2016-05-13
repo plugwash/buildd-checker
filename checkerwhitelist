@@ -6,3 +6,5 @@
 /usr/lib/icedove/libxul.so
 /usr/lib/debug/usr/lib/firefox-esr/libxul.so
 /usr/lib/firefox-esr/libxul.so
+/usr/lib/debug/usr/lib/arm-linux-gnueabihf/vfp/neon/libvpx.so.3.0.0
+/usr/lib/arm-linux-gnueabihf/vfp/neon/libvpx.so.3.0.0

@@ -4,6 +4,7 @@
 /usr/lib/iceweasel/libxul.so
 /usr/lib/debug/usr/lib/icedove/libxul.so
 /usr/lib/icedove/libxul.so
+/usr/lib/thunderbird/libxul.so
 /usr/lib/debug/usr/lib/firefox-esr/libxul.so
 /usr/lib/firefox-esr/libxul.so
 /usr/lib/debug/usr/lib/arm-linux-gnueabihf/vfp/neon/libvpx.so.3.0.0

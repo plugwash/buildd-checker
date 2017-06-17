@@ -338,6 +338,8 @@ sub test_file ($$) {
     if ($filescan =~ /Tag_CPU_arch:\s+v7/) {
         if ($whitelist->{$fileinpackage}) {
             $self->log("found dirty file ".$fileinpackage." but ignoring due to whitelist");
+        } elsif (index($fileinpackage,"/usr/lib/debug/.build-id/")==0) {
+            $self->log("found dirty file ".$fileinpackage." but ignoring because path begins with /usr/lib/debug/.build_id/");
         } else {
             $self->log("found dirty file ".$fileinpackage);
             return 0;

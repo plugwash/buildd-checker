@@ -33,6 +33,7 @@ use Sbuild::ChrootRoot;
 use Buildd::Client;
 use Cwd;
 use File::Basename;
+use Text::Glob qw( match_glob );
 
 BEGIN {
     use Exporter ();
@@ -80,6 +81,7 @@ sub run {
         next if $line =~ /^\s*\z/; # skip blank lines;
         next if $line =~ /^\s*#/; # skip comment lines;
         $whitelist{$line} = 1;
+        $whitelist{$line} = 2 if $line =~ /[?*]/;
     }
     $self->set('whitelist',\%whitelist);
     #print STDERR "whitelist read complete\n";
@@ -341,8 +343,18 @@ sub test_file ($$) {
         } elsif (index($fileinpackage,"/usr/lib/debug/.build-id/")==0) {
             $self->log("found dirty file ".$fileinpackage." but ignoring because path begins with /usr/lib/debug/.build_id/");
         } else {
-            $self->log("found dirty file ".$fileinpackage);
-            return 0;
+            my $glob_wl = 0;
+            foreach my $glob (grep ($whitelist->{$a} == 2), keys %$whitelist) {
+                if (match_glob($glob, $fileinpackage)) {
+                    print("found dirty file ".$fileinpackage." but ignoring due to whitelist ".$glob."\n");
+                    $glob_wl = 1;
+                    last;
+                }
+            }
+            if (! $glob_wl) {
+                $self->log("found dirty file ".$fileinpackage);
+                return 0;
+            }
         }
     }
 

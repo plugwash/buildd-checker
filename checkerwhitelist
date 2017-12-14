@@ -12,3 +12,7 @@
 /usr/lib/gcc/arm-none-eabi/*/armv7*-m/*
 /usr/lib/gcc/arm-none-eabi/*/armv7*-m/*/*
 /usr/lib/gcc/arm-none-eabi/*/armv7*-m/*/*/*
+/usr/lib/gcc/arm-none-eabi/*/thumb/v7*/*
+/usr/lib/gcc/arm-none-eabi/*/thumb/v7*/*/*
+/usr/lib/gcc/arm-none-eabi/*/thumb/v7*/*/*/*
+/usr/lib/gcc/arm-none-eabi/*/thumb/v7*/*/*/*/*

@@ -119,11 +119,12 @@ sub process_build() {
     # Test each changes file in the /build directory.
     foreach $f (@before) {
         if ( -f $f ) {
-	    if ($self->test_changes($f)) {
+            my $testresult =$self->test_changes($f);
+	    if ($testresult==1) {
                 push(@tested, $f);
             } else {
 	        push(@failed, $f);
-		push(@dirty, $f);
+		push(@dirty, $f) if ($testresult==2);
 	    }
         }
     }
@@ -197,6 +198,19 @@ sub test_changes ($$) {
     # Get the files.
     $changes =~ /^Files:\s*\n((^[       ]+.*\n)*)/m;
     foreach (split( "\n", $1 )) {
+        my $file =(split( /\s+/, $_ ))[5];
+        my $size =int( (split( /\s+/, $_ ))[2]);
+        if (! -e $file) {
+            $self->log("$file not found\n");
+            return 0
+        }
+        my $filesize = -s $file;
+        $self->log($file);
+        $self->log($f);
+        if ($size!=$filesize) {
+            $self->log("$file size mismatch $size != $filesize\n");
+            return 0
+        }
         push( @md5, (split( /\s+/, $_ ))[1] );
         push( @files, (split( /\s+/, $_ ))[5] );
     }
@@ -228,7 +242,7 @@ sub test_changes ($$) {
     # Test each package within the temp directory.
     foreach $d (@debs) {
     	if (!$self->test_package($t, $d)) {
-	    $v7clean = 0;
+	    $v7clean = 2;
             $self->log("ARMv7 WARNING: $d\n");
 	}
     }

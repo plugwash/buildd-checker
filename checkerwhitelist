@@ -7,8 +7,8 @@
 /usr/lib/thunderbird/libxul.so
 /usr/lib/debug/usr/lib/firefox-esr/libxul.so
 /usr/lib/firefox-esr/libxul.so
-/usr/lib/debug/usr/lib/arm-linux-gnueabihf/vfp/neon/libvpx.so.3.0.0
-/usr/lib/arm-linux-gnueabihf/vfp/neon/libvpx.so.3.0.0
+/usr/lib/debug/usr/lib/arm-linux-gnueabihf/vfp/neon/libvpx.so.*
+/usr/lib/arm-linux-gnueabihf/vfp/neon/libvpx.so.*
 /usr/lib/gcc/arm-none-eabi/*/armv7*-m/*
 /usr/lib/gcc/arm-none-eabi/*/armv7*-m/*/*
 /usr/lib/gcc/arm-none-eabi/*/armv7*-m/*/*/*

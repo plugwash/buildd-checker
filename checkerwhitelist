@@ -18,3 +18,7 @@
 /usr/lib/gcc/arm-none-eabi/*/thumb/v7*/*/*/*/*
 /usr/lib/libmono-btls-shared.so
 /usr/lib/debug/.build-id/*/*.debug
+/usr/lib/grub/arm-efi/kernel.img
+/usr/lib/grub/arm-efi/kernel.exec
+/usr/lib/grub/arm-uboot/kernel.img
+/usr/lib/grub/arm-uboot/kernel.exec

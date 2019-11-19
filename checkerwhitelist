@@ -7,6 +7,7 @@
 /usr/lib/thunderbird/libxul.so
 /usr/lib/debug/usr/lib/firefox-esr/libxul.so
 /usr/lib/firefox-esr/libxul.so
+/usr/lib/firefox-esr/libmozav*.so
 /usr/lib/debug/usr/lib/arm-linux-gnueabihf/vfp/neon/libvpx.so.*
 /usr/lib/arm-linux-gnueabihf/vfp/neon/libvpx.so.*
 /usr/lib/gcc/arm-none-eabi/*/armv7*-m/*

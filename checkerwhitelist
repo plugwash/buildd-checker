@@ -23,3 +23,6 @@
 /usr/lib/grub/arm-efi/kernel.exec
 /usr/lib/grub/arm-uboot/kernel.img
 /usr/lib/grub/arm-uboot/kernel.exec
+#mono boringtls, i'm pretty sure this is behind arch checks, time will tell
+/usr/lib/libmono-btls-shared.so
+/usr/lib/debug/usr/lib/libmono-btls-shared.so

@@ -26,3 +26,4 @@
 #mono boringtls, i'm pretty sure this is behind arch checks, time will tell
 /usr/lib/libmono-btls-shared.so
 /usr/lib/debug/usr/lib/libmono-btls-shared.so
+/usr/lib/arm-linux-gnueabihf/neon/vfp/*

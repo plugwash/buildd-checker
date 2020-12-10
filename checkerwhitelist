@@ -27,3 +27,4 @@
 /usr/lib/libmono-btls-shared.so
 /usr/lib/debug/usr/lib/libmono-btls-shared.so
 /usr/lib/arm-linux-gnueabihf/neon/vfp/*
+/usr/lib/arm-linux-gnueabihf/julia/libopenblas.so

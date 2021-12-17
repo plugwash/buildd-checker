@@ -29,3 +29,4 @@
 /usr/lib/arm-linux-gnueabihf/neon/vfp/*
 /usr/lib/arm-linux-gnueabihf/julia/libopenblas.so
 /usr/lib/arm-linux-gnueabihf/android/*
+/usr/bin/cryfs

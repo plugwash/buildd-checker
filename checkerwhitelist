@@ -36,3 +36,5 @@
 /usr/lib/llvm-13/lib/clang/*/lib/linux/libclang_rt.asan-armhf.so
 /usr/lib/llvm-12/lib/clang/*/lib/linux/libclang_rt.xray-armhf.a
 /usr/lib/llvm-13/lib/clang/*/lib/linux/libclang_rt.xray-armhf.a
+#openh264, I have investigated the code and runtime checks appear to be in place, hopefully I don't regret this.
+/usr/lib/arm-linux-gnueabihf/libopenh264.*

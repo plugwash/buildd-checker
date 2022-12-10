@@ -30,11 +30,11 @@
 /usr/lib/arm-linux-gnueabihf/julia/libopenblas.so
 /usr/lib/arm-linux-gnueabihf/android/*
 /usr/bin/cryfs
-/usr/lib/llvm-12/lib/clang/*/lib/linux/libclang_rt.asan-armhf.a
-/usr/lib/llvm-13/lib/clang/*/lib/linux/libclang_rt.asan-armhf.a
-/usr/lib/llvm-12/lib/clang/*/lib/linux/libclang_rt.asan-armhf.so
-/usr/lib/llvm-13/lib/clang/*/lib/linux/libclang_rt.asan-armhf.so
-/usr/lib/llvm-12/lib/clang/*/lib/linux/libclang_rt.xray-armhf.a
-/usr/lib/llvm-13/lib/clang/*/lib/linux/libclang_rt.xray-armhf.a
 #openh264, I have investigated the code and runtime checks appear to be in place, hopefully I don't regret this.
 /usr/lib/arm-linux-gnueabihf/libopenh264.*
+#llvm, since llvm 12 some of the alternate clang runtimes show as contaminated, I don't like this but decided it was the lesser evil compared to not updating llvm
+/usr/lib/llvm-*/lib/clang/*/lib/linux/libclang_rt.asan-armhf.a
+/usr/lib/llvm-*/lib/clang/*/lib/linux/libclang_rt.asan-armhf.so
+/usr/lib/llvm-*/lib/clang/*/lib/linux/libclang_rt.xray-armhf.a
+/usr/lib/llvm-*/lib/clang/*/lib/linux/libclang_rt.asan_static-armhf.a
+/usr/lib/llvm-*/lib/clang/*/lib/linux/libclang_rt.orc-armhf.a

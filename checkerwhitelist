@@ -38,3 +38,14 @@
 /usr/lib/llvm-*/lib/clang/*/lib/linux/libclang_rt.xray-armhf.a
 /usr/lib/llvm-*/lib/clang/*/lib/linux/libclang_rt.asan_static-armhf.a
 /usr/lib/llvm-*/lib/clang/*/lib/linux/libclang_rt.orc-armhf.a
+#more llvm stuff, even less happy about this, but not sure what I can do.
+/usr/lib/llvm-*/lib/libc++.a
+/usr/lib/llvm-*/lib/libc++.so.1.0
+/usr/lib/llvm-*/lib/libc++abi.a
+/usr/lib/llvm-*/lib/libc++abi.so.1.0
+/usr/lib/llvm-*/lib/clang/16/lib/linux/libclang_rt.profile-armhf.a
+/usr/lib/llvm-*/lib/clang/16/lib/linux/libclang_rt.xray-basic-armhf.a
+/usr/lib/llvm-*/lib/clang/16/lib/linux/libclang_rt.xray-fdr-armhf.a
+/usr/lib/llvm-*/lib/clang/16/lib/linux/libclang_rt.xray-profiling-armhf.a
+/usr/lib/llvm-*/lib/clang/16/lib/linux/liborc_rt-armhf.a
+/usr/lib/llvm-*/lib/libc++experimental.a

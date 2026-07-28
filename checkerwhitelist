@@ -58,3 +58,7 @@
 /usr/lib/llvm-*/lib/clang/*/lib/linux/libclang_rt.lsan-armhf.a
 /usr/lib/llvm-*/lib/clang/*/lib/linux/libclang_rt.stats*.a
 /usr/lib/llvm-*/lib/clang/*/lib/linux/libclang_rt.*ubsan*.*
+/usr/lib/llvm-*/lib/libllvmlibc.a
+/usr/lib/arm-linux-gnueabihf/libc++.a
+/usr/lib/arm-linux-gnueabihf/libc++abi.a
+/usr/lib/arm-linux-gnueabihf/libc++experimental.a
